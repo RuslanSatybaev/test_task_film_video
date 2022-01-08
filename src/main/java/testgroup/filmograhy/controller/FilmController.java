@@ -1,32 +1,28 @@
 package testgroup.filmograhy.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 import testgroup.filmograhy.model.Film;
+import testgroup.filmograhy.service.FilmService;
+
+import java.util.List;
 
 @Controller
 public class FilmController {
-    private static final ModelAndView modelAndView = new ModelAndView();
-    private static Film film;
 
-    static {
-        film = new Film();
-        film.setTitle("Inception");
-        film.setYear(2010);
-        film.setGenre("sci-fi");
-        film.setWatched(true);
-        film.setPosition(1);
-        film.setRating(5);
-        film.setCountVotePeople(1000);
-    }
+    @Autowired
+    private FilmService filmService;
+    private static final ModelAndView modelAndView = new ModelAndView();
 
     @GetMapping("/")
     public ModelAndView allFilms() {
+        List<Film> films = filmService.allFilms();
         modelAndView.setViewName("films");
-        modelAndView.addObject("film", film);
+        modelAndView.addObject("filmsList", films);
         return modelAndView;
     }
 
@@ -35,4 +31,6 @@ public class FilmController {
         modelAndView.setViewName("editPage");
         return modelAndView;
     }
+
+
 }
