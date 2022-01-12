@@ -31,6 +31,4 @@ public class FilmController {
         modelAndView.setViewName("editPage");
         return modelAndView;
     }
-
-
 }
