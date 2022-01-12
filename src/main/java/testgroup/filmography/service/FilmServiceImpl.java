@@ -1,9 +1,9 @@
-package testgroup.filmograhy.service;
+package testgroup.filmography.service;
 
 import org.springframework.stereotype.Service;
-import testgroup.filmograhy.dao.FilmDAO;
-import testgroup.filmograhy.dao.FilmDAOImpl;
-import testgroup.filmograhy.model.Film;
+import testgroup.filmography.dao.FilmDAO;
+import testgroup.filmography.dao.FilmDAOImpl;
+import testgroup.filmography.model.Film;
 
 import java.util.List;
 

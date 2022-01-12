@@ -1,4 +1,4 @@
-package testgroup.filmograhy.config;
+package testgroup.filmography.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;

@@ -1,6 +1,7 @@
-package testgroup.filmograhy.dao;
+package testgroup.filmography.dao;
 
-import testgroup.filmograhy.model.Film;
+
+import testgroup.filmography.model.Film;
 
 import java.util.List;
 

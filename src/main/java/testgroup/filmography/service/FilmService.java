@@ -1,6 +1,7 @@
-package testgroup.filmograhy.service;
+package testgroup.filmography.service;
 
-import testgroup.filmograhy.model.Film;
+
+import testgroup.filmography.model.Film;
 
 import java.util.List;
 

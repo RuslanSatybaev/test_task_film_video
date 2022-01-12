@@ -1,7 +1,6 @@
-package testgroup.filmograhy.dao;
+package testgroup.filmography.dao;
 
-import testgroup.filmograhy.controller.ApiMain;
-import testgroup.filmograhy.model.Film;
+import testgroup.filmography.model.Film;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -17,23 +16,23 @@ public class FilmDAOImpl implements FilmDAO {
 
         Film film1 = new Film();
         film1.setId(AUTO_ID.getAndIncrement());
-        film1.setTitle(ApiMain.getFilmName(0));
-        film1.setYear(ApiMain.getFilmYear(0));
+        film1.setTitle("hbj");
+        film1.setYear(10);
         film1.setGenre("sci-fi");
         film1.setWatched(true);
         film1.setPosition(1);
-        film1.setRating(ApiMain.getFilmRating(0));
+        film1.setRating(9.3);
         film1.setCountVotePeople(1000);
         films.put(film1.getId(), film1);
 
         Film film2 = new Film();
         film2.setId(AUTO_ID.getAndIncrement());
-        film2.setTitle(ApiMain.getFilmName(1));
-        film2.setYear(ApiMain.getFilmYear(1));
+        film2.setTitle("jnkn");
+        film2.setYear(100);
         film2.setGenre("sci-fivdfv");
         film2.setWatched(true);
         film2.setPosition(1);
-        film2.setRating(ApiMain.getFilmRating(1));
+        film2.setRating(8.5);
         film2.setCountVotePeople(100045245);
         films.put(film2.getId(), film2);
     }
