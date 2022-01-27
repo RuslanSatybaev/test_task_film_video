@@ -15,7 +15,7 @@ import javax.sql.DataSource;
 import java.util.Properties;
 
 @Configuration
-@ComponentScan(basePackages = "testgroup")
+@ComponentScan(basePackages = "testgroup.filmography")
 @EnableTransactionManagement
 @PropertySource(value = "classpath:db.properties")
 public class HibernateConfig {
@@ -47,7 +47,7 @@ public class HibernateConfig {
     public LocalSessionFactoryBean sessionFactory() {
         LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
         sessionFactory.setDataSource(dataSource());
-        sessionFactory.setPackagesToScan("testgroup.filmography.model");
+        sessionFactory.setPackagesToScan("testgroup.filmography");
         sessionFactory.setHibernateProperties(hibernateProperties());
         return sessionFactory;
     }

@@ -16,19 +16,20 @@
 <table>
     <tr>
         <th>id</th>
+        <th>position</th>
+        <th>rating</th>
         <th>title</th>
         <th>year</th>
-        <th>genre</th>
-        <th>watched</th>
-        <th>action</th>
+        <th>countVotePeople</th>
     </tr>
     <c:forEach var="film" items="${filmsList}">
         <tr>
             <th>${film.id}</th>
+            <th>${film.position}</th>
+            <th>${film.rating}</th>
             <th>${film.title}</th>
             <th>${film.year}</th>
-            <th>${film.genre}</th>
-            <th>${film.watched}</th>
+            <th>${film.countVotePeople}</th>
             <td>
                 <a href="/edit/${film.id}">edit</a>
                 <a href="/delete/${film.id}">delete</a>
@@ -37,8 +38,8 @@
     </c:forEach>
 </table>
 
-<h2>Add</h2>
-<c:url value="/add" var="add"/>
-<a href="${add}">Add new film</a>
+<h2>Adds</h2>
+<%--<c:url value="/add" var="add"/>--%>
+<a href="/edit">Add new film</a>
 </body>
 </html>

@@ -1,21 +1,29 @@
 package testgroup.filmography.model;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "films")
 public class Film {
 
+    @Id
+    @Column
     private int id;
 
+    @Column
     public int position;
 
+    @Column
     public Double rating;
 
+    @Column
     public String title;
 
+    @Column
     public int year;
 
+    @Column
     public int countVotePeople;
-
-    public String genre;
-    public boolean watched;
 
     public int getId() {
         return id;
@@ -63,21 +71,5 @@ public class Film {
 
     public void setCountVotePeople(int countVotePeople) {
         this.countVotePeople = countVotePeople;
-    }
-
-    public String getGenre() {
-        return genre;
-    }
-
-    public void setGenre(String genre) {
-        this.genre = genre;
-    }
-
-    public boolean isWatched() {
-        return watched;
-    }
-
-    public void setWatched(boolean watched) {
-        this.watched = watched;
     }
 }

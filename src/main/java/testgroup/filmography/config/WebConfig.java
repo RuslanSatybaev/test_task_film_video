@@ -9,7 +9,7 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackages = "testgroup")
+@ComponentScan(basePackages = "testgroup.filmography")
 public class WebConfig {
 
     @Bean
