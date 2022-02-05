@@ -1,6 +1,7 @@
 package testgroup.filmography.model;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 @Table(name = "films")
@@ -8,22 +9,29 @@ public class Film {
 
     @Id
     @Column
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     @Column
-    public int position;
+    private int position;
 
     @Column
-    public Double rating;
+    private Double rating;
+
+    @Column(name = "title")
+    private String nameEn;
 
     @Column
-    public String title;
+    private int year;
 
-    @Column
-    public int year;
+    @Column(name = "countVotePeople")
+    private int ratingVoteCount;
 
-    @Column
-    public int countVotePeople;
+    @Column(name = "choose_date_for_rating")
+    private Date dateOFSelection;
+
+    public Film() {
+    }
 
     public int getId() {
         return id;
@@ -49,12 +57,12 @@ public class Film {
         this.rating = rating;
     }
 
-    public String getTitle() {
-        return title;
+    public String getNameEn() {
+        return nameEn;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setNameEn(String nameEn) {
+        this.nameEn = nameEn;
     }
 
     public int getYear() {
@@ -65,11 +73,28 @@ public class Film {
         this.year = year;
     }
 
-    public int getCountVotePeople() {
-        return countVotePeople;
+    public int getRatingVoteCount() {
+        return ratingVoteCount;
     }
 
-    public void setCountVotePeople(int countVotePeople) {
-        this.countVotePeople = countVotePeople;
+    public void setRatingVoteCount(int countVotePeople) {
+        this.ratingVoteCount = countVotePeople;
+    }
+
+    public Date getDateOFSelection() {
+        return dateOFSelection;
+    }
+
+    public void setDateOFSelection(Date dateOFSelection) {
+        this.dateOFSelection = dateOFSelection;
+    }
+
+    public Film(int id, int position, Double rating, String nameEn, int year, int ratingVoteCount) {
+        this.id = id;
+        this.position = position;
+        this.rating = rating;
+        this.nameEn = nameEn;
+        this.year = year;
+        this.ratingVoteCount = ratingVoteCount;
     }
 }

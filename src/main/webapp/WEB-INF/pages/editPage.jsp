@@ -11,8 +11,8 @@
     <title>Title</title>
 </head>
 <body>
-    Edit page
+    <h2>Choose date top film from kinopoisk.top</h2>
 
-    <a href="/choose_date_top_film">Add new film</a>
+    <a href="/">Result</a>
 </body>
 </html>

@@ -21,25 +21,23 @@
         <th>title</th>
         <th>year</th>
         <th>countVotePeople</th>
+        <th>select date for rating</th>
     </tr>
     <c:forEach var="film" items="${filmsList}">
         <tr>
             <th>${film.id}</th>
             <th>${film.position}</th>
             <th>${film.rating}</th>
-            <th>${film.title}</th>
+            <th>${film.nameEn}</th>
             <th>${film.year}</th>
-            <th>${film.countVotePeople}</th>
-            <td>
-                <a href="/edit/${film.id}">edit</a>
-                <a href="/delete/${film.id}">delete</a>
-            </td>
+            <th>${film.ratingVoteCount}</th>
+            <th>${film.dateOFSelection}</th>
         </tr>
     </c:forEach>
 </table>
-
-<h2>Adds</h2>
-<%--<c:url value="/add" var="add"/>--%>
-<a href="/edit">Add new film</a>
+<br>
+<br>
+<br>
+<a href="/edit">Сhoose a date</a>
 </body>
 </html>

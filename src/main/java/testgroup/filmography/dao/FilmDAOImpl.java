@@ -10,7 +10,10 @@ import java.util.List;
 
 @Repository
 public class FilmDAOImpl implements FilmDAO {
+
+
     private SessionFactory sessionFactory;
+
 
     @Autowired
     public void setSessionFactory(SessionFactory sessionFactory) {
@@ -25,7 +28,8 @@ public class FilmDAOImpl implements FilmDAO {
 
     @Override
     public void add(Film film) {
-
+        Session session = sessionFactory.getCurrentSession();
+        session.persist(film);
     }
 
     @Override

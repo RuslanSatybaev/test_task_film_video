@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 import testgroup.filmography.model.Film;
 import testgroup.filmography.service.FilmService;
+import testgroup.filmography.service.KinoPoiskService;
 
 import java.util.List;
 
@@ -18,8 +19,22 @@ public class FilmController {
     private FilmService filmService;
     private static final ModelAndView modelAndView = new ModelAndView();
 
+    @Autowired
+    private KinoPoiskService kinoPoiskService;
+    int position = 1;
+
     @GetMapping("/")
     public ModelAndView allFilms() {
+
+        try {
+            for (Film filmDescr : kinoPoiskService.desc.films) {
+                filmDescr.setPosition(position);
+                position++;
+                filmService.add(filmDescr);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         List<Film> films = filmService.allFilms();
         modelAndView.setViewName("films");
         modelAndView.addObject("filmsList", films);

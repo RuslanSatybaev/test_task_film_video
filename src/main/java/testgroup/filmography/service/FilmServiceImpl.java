@@ -25,6 +25,7 @@ public class FilmServiceImpl  implements FilmService{
     }
 
     @Override
+    @Transactional
     public void add(Film film) {
         filmDAO.add(film);
     }
